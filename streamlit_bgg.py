@@ -145,12 +145,18 @@ def graph_section():
 
         # Add Select All and Select None buttons
         col1, col2, col3 = st.sidebar.columns(3)
-        if col1.button("Select All"):
-            st.session_state.selected_ranks = all_ranks
-        if col2.button("Select None"):
-            st.session_state.selected_ranks = []
-        if col3.button("Select Default"):
+        # Add Select All and Select None buttons
+        col1, col2, col3 = st.sidebar.columns(3)
+        with col1:
+            if st.button("Select All"):
+                st.session_state.selected_games = all_games_list
+            if st.button("None"):
+                st.session_state.selected_games = []
+        if col2.button("TOP 10"):
             st.session_state.selected_ranks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        if col3.button("TOP 20"):
+            st.session_state.selected_ranks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+            
 
         selected_ranks = st.sidebar.multiselect(
             "Select one or more ranks",
