@@ -147,9 +147,9 @@ def graph_section():
         col1, col2, col3 = st.sidebar.columns(3)
         with col1:
             if st.button("Select All"):
-                st.session_state.selected_games = all_ranks
+                st.session_state.selected_ranks = all_ranks
             if st.button("None"):
-                st.session_state.selected_games = []
+                st.session_state.selected_ranks = []
         if col2.button("TOP 10"):
             st.session_state.selected_ranks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         if col3.button("TOP 20"):
